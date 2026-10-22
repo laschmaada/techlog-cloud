@@ -4,6 +4,10 @@ A serverless aircraft technical log on AWS: line mechanics raise defects, certif
 
 Built by **Lebogang Sethibe** — 20+ years aircraft maintenance (B737-800, A320 family, A330/A340, A350, A380, B777) — as portfolio project 1 of 3 in aviation cloud engineering. **All data is synthetic.** No real airline, aircraft or person appears anywhere in this repo.
 
+## Live demo
+
+**▶ https://d3qpkw8em0knl8.cloudfront.net** — deployed to **af-south-1 (Cape Town)** and verified end-to-end on 22 Oct 2026: role-based sign-in (Mechanic / Certifying), fleet board, the full `OPEN → DEFERRED → RECTIFIED → CLOSED` workflow with append-only audit history, and a live AOG email alert via SNS. Demo logins available on request.
+
 ## Why
 
 Paper and deferred-defect systems fail in predictable ways: a defect raised at an outstation isn't visible to planning until the aircraft lands, handwriting gets misread, and repeat defects hide across log pages. TechLog Cloud is the same technical log, rebuilt the way the data wants to work — live, searchable, and impossible to quietly edit.
