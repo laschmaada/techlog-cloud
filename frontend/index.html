@@ -3,74 +3,246 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TechLog Cloud — Digital Aircraft Technical Log</title>
+<title>Highveld Air — TechLog | Aircraft Technical Log</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <h1>✈ TechLog Cloud</h1>
-  <p class="tag">Digital aircraft technical log · synthetic demo data only</p>
-  <div id="userbar" class="hidden">
-    <span id="who"></span>
-    <button id="logout" type="button">Log out</button>
+
+<!-- ======================= AUTH ======================= -->
+<section id="auth-view">
+  <div class="auth-brand">
+    <div class="brand-mark">
+      <svg viewBox="0 0 64 64" width="54" height="54" aria-hidden="true">
+        <rect x="2" y="2" width="60" height="60" rx="14" fill="#0A2240"/>
+        <circle cx="32" cy="27" r="10" fill="#F6A609"/>
+        <path d="M10 40 Q32 30 54 40" stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M14 49 Q32 41 50 49" stroke="#5FB2E5" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="brand-name">HIGHVELD <span>AIR</span></div>
+        <div class="brand-tag">South Africa, connected.</div>
+      </div>
+    </div>
+    <h1 class="auth-headline">The technical log,<br>run like an airline.</h1>
+    <p class="auth-sub">TechLog is Highveld Air's digital aircraft technical log —
+    line defects, MEL deferrals and certifying releases with a complete,
+    append-only audit trail.</p>
+    <ul class="auth-points">
+      <li><b>Base:</b> Johannesburg · OR Tambo International (FAOR)</li>
+      <li><b>Network:</b> Cape Town · Durban · Gqeberha · East London · Bloemfontein · George · Lanseria · Kimberley · Upington</li>
+      <li><b>Fleet:</b> 20 × Airbus A320 · ZS-LEA to ZS-LET</li>
+    </ul>
+    <p class="auth-foot">Demo environment — all aircraft, defects and people are synthetic.</p>
   </div>
-</header>
 
-<main>
-  <!-- Login -->
-  <section id="login-view" class="card">
-    <h2>Sign in</h2>
-    <form id="login-form">
-      <label>Email <input type="email" id="login-email" required></label>
-      <label>Password <input type="password" id="login-password" required></label>
-      <button type="submit">Sign in</button>
-      <p id="login-error" class="error"></p>
-    </form>
-    <p class="hint">Accounts are created by the admin in Cognito (see DEPLOY.md).
-    Demo users: a <b>Mechanic</b> can raise defects; <b>Certifying</b> can also defer / rectify / close.</p>
-  </section>
+  <div class="auth-forms">
+    <!-- Sign in -->
+    <div class="card auth-card" id="signin-card">
+      <div class="auth-tabs">
+        <button type="button" class="active" data-authtab="signin">Sign in</button>
+        <button type="button" data-authtab="register">Create account</button>
+      </div>
+      <form id="login-form" novalidate>
+        <label>Work email
+          <input type="email" id="login-email" autocomplete="username" required placeholder="you@highveldair.co.za">
+        </label>
+        <label>Password
+          <input type="password" id="login-password" autocomplete="current-password" required placeholder="Your password">
+        </label>
+        <button type="submit" class="btn-primary">Sign in to TechLog</button>
+        <p id="login-error" class="error" role="alert"></p>
+      </form>
+      <div class="auth-links">
+        <button type="button" class="linklike" id="goto-forgot">Forgot password?</button>
+        <button type="button" class="linklike" id="goto-confirm">Enter a confirmation code</button>
+      </div>
+      <p class="hint">Demo users from the first deployment still work:
+      <b>Mechanic</b> can raise defects; <b>Certifying</b> can also defer, rectify and close.</p>
+    </div>
 
-  <!-- App -->
-  <section id="app-view" class="hidden">
+    <!-- Register -->
+    <div class="card auth-card hidden" id="register-card">
+      <div class="auth-tabs">
+        <button type="button" data-authtab="signin">Sign in</button>
+        <button type="button" class="active" data-authtab="register">Create account</button>
+      </div>
+      <form id="register-form" novalidate>
+        <label>Full name
+          <input type="text" id="reg-name" autocomplete="name" required placeholder="e.g. Naledi Dlamini">
+        </label>
+        <label>Work email
+          <input type="email" id="reg-email" autocomplete="email" required placeholder="you@highveldair.co.za">
+        </label>
+        <label>Password
+          <input type="password" id="reg-password" autocomplete="new-password" required placeholder="Create a password">
+        </label>
+        <p class="rules">At least 10 characters, with an uppercase letter, a lowercase letter and a number.</p>
+        <label>Confirm password
+          <input type="password" id="reg-password2" autocomplete="new-password" required placeholder="Repeat the password">
+        </label>
+        <button type="submit" class="btn-primary">Create account</button>
+        <p id="register-error" class="error" role="alert"></p>
+      </form>
+      <p class="hint">We email you a 6-digit confirmation code. New accounts get
+      <b>Mechanic</b> access (raise defects) as soon as the email is confirmed.
+      <b>Certifying</b> access is assigned by the TechLog administrator — it is never self-service.</p>
+    </div>
+
+    <!-- Confirm -->
+    <div class="card auth-card hidden" id="confirm-card">
+      <h2>Confirm your email</h2>
+      <p class="hint">Enter the 6-digit code we emailed you. The account activates
+      as soon as the code checks out.</p>
+      <form id="confirm-form" novalidate>
+        <label>Email
+          <input type="email" id="conf-email" autocomplete="email" required>
+        </label>
+        <label>Confirmation code
+          <input type="text" id="conf-code" inputmode="numeric" autocomplete="one-time-code" required placeholder="6-digit code">
+        </label>
+        <button type="submit" class="btn-primary">Confirm account</button>
+        <p id="confirm-error" class="error" role="alert"></p>
+        <p id="confirm-ok" class="ok"></p>
+      </form>
+      <div class="auth-links">
+        <button type="button" class="linklike" id="resend-code">Resend code</button>
+        <button type="button" class="linklike" data-authtab="signin">Back to sign in</button>
+      </div>
+    </div>
+
+    <!-- Forgot password -->
+    <div class="card auth-card hidden" id="forgot-card">
+      <h2>Reset your password</h2>
+      <form id="forgot-form" novalidate>
+        <label>Work email
+          <input type="email" id="fp-email" autocomplete="email" required>
+        </label>
+        <button type="submit" class="btn-primary">Email me a reset code</button>
+        <p id="forgot-error" class="error" role="alert"></p>
+      </form>
+      <form id="forgot2-form" class="hidden" novalidate>
+        <label>Reset code (from email)
+          <input type="text" id="fp-code" inputmode="numeric" autocomplete="one-time-code" required>
+        </label>
+        <label>New password
+          <input type="password" id="fp-password" autocomplete="new-password" required>
+        </label>
+        <p class="rules">At least 10 characters, with an uppercase letter, a lowercase letter and a number.</p>
+        <button type="submit" class="btn-primary">Set new password</button>
+        <p id="forgot2-error" class="error" role="alert"></p>
+        <p id="forgot2-ok" class="ok"></p>
+      </form>
+      <div class="auth-links">
+        <button type="button" class="linklike" data-authtab="signin">Back to sign in</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= APP ======================= -->
+<section id="app-view" class="hidden">
+  <header class="topbar">
+    <div class="brand-mark small">
+      <svg viewBox="0 0 64 64" width="36" height="36" aria-hidden="true">
+        <rect x="2" y="2" width="60" height="60" rx="14" fill="#FFFFFF"/>
+        <circle cx="32" cy="27" r="10" fill="#F6A609"/>
+        <path d="M10 40 Q32 30 54 40" stroke="#0A2240" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M14 49 Q32 41 50 49" stroke="#5FB2E5" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="brand-name light">HIGHVELD <span>AIR</span></div>
+        <div class="brand-sub">TechLog · Engineering &amp; Maintenance</div>
+      </div>
+    </div>
+    <div class="userbar">
+      <span id="who"></span>
+      <span id="role-chip" class="chip"></span>
+      <button id="logout" type="button" class="btn-ghost">Log out</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="stats" id="stats">
+      <div class="stat"><span class="stat-num" id="st-serviceable">–</span><span class="stat-label">Aircraft in service</span></div>
+      <div class="stat"><span class="stat-num" id="st-open">–</span><span class="stat-label">Open defects</span></div>
+      <div class="stat danger"><span class="stat-num" id="st-aog">–</span><span class="stat-label">AOG</span></div>
+      <div class="stat"><span class="stat-num" id="st-deferred">–</span><span class="stat-label">Deferred (MEL)</span></div>
+    </div>
+
     <div class="card">
-      <h2>Fleet board</h2>
+      <div class="card-head">
+        <h2>Fleet status — Airbus A320</h2>
+        <span class="hint">Click a tail to filter its log</span>
+      </div>
+      <div class="fleet-grid" id="fleet-grid"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>Defect board</h2>
+        <span id="tail-filter" class="chip hidden"></span>
+      </div>
       <div class="tabs" id="status-tabs">
         <button data-status="OPEN" class="active" type="button">Open</button>
         <button data-status="DEFERRED" type="button">Deferred</button>
         <button data-status="RECTIFIED" type="button">Rectified</button>
         <button data-status="CLOSED" type="button">Closed</button>
       </div>
+      <div class="table-scroll">
       <table>
         <thead><tr><th>Tail</th><th>ATA</th><th>Station</th><th>Category</th><th>Description</th><th>Raised</th></tr></thead>
         <tbody id="board-body"></tbody>
       </table>
+      </div>
       <p id="board-empty" class="hint hidden">No defects in this status.</p>
     </div>
 
     <div class="card">
       <h2>Raise a defect</h2>
-      <form id="raise-form">
+      <form id="raise-form" novalidate>
         <div class="grid">
           <label>Registration
             <select id="f-tail" required></select>
           </label>
           <label>Fleet type
-            <select id="f-fleet" required>
-              <option>B737-800</option><option>A320</option>
+            <input id="f-fleet" value="A320" readonly>
+          </label>
+          <label>ATA chapter
+            <input id="f-ata" list="ata-list" placeholder="e.g. 32" maxlength="2" required>
+            <datalist id="ata-list">
+              <option value="21"></option><option value="22"></option><option value="24"></option>
+              <option value="25"></option><option value="26"></option><option value="27"></option>
+              <option value="28"></option><option value="29"></option><option value="32"></option>
+              <option value="36"></option><option value="49"></option><option value="52"></option>
+            </datalist>
+          </label>
+          <label>Station
+            <select id="f-station" required>
+              <option value="FAOR">FAOR — Johannesburg (Base)</option>
+              <option value="FALA">FALA — Lanseria</option>
+              <option value="FACT">FACT — Cape Town</option>
+              <option value="FALE">FALE — Durban (King Shaka)</option>
+              <option value="FAPE">FAPE — Gqeberha</option>
+              <option value="FAEL">FAEL — East London</option>
+              <option value="FABL">FABL — Bloemfontein</option>
+              <option value="FAGG">FAGG — George</option>
+              <option value="FAKM">FAKM — Kimberley</option>
+              <option value="FAUP">FAUP — Upington</option>
             </select>
           </label>
-          <label>ATA chapter <input id="f-ata" placeholder="e.g. 32" maxlength="2" required></label>
-          <label>Station (ICAO) <input id="f-station" placeholder="FAOR" maxlength="4" required></label>
           <label>Category
             <select id="f-category" required>
-              <option>AOG</option><option>DEFERRAL</option><option>CABIN</option><option>OBSERVATION</option>
+              <option value="AOG">AOG — aircraft on ground</option>
+              <option value="DEFERRAL">Deferral (MEL)</option>
+              <option value="CABIN">Cabin</option>
+              <option value="OBSERVATION">Observation</option>
             </select>
           </label>
         </div>
         <label>Description (write it like a log entry)
           <textarea id="f-desc" rows="3" required placeholder="e.g. Nose gear steering judder during taxi-in, felt through tiller at low speed"></textarea>
         </label>
-        <button type="submit">Raise defect</button>
+        <button type="submit" class="btn-primary">Raise defect</button>
         <p id="raise-msg"></p>
       </form>
     </div>
@@ -86,12 +258,14 @@
       </label>
       <p id="photo-msg"></p>
     </div>
-  </section>
-</main>
+  </main>
 
-<footer>
-  <p>TechLog Cloud — portfolio project by Lebogang Sethibe. All aircraft, defects and people are synthetic.</p>
-</footer>
+  <footer>
+    <p><b>Highveld Air</b> is a fictional South African domestic airline created for this
+    portfolio demonstration — TechLog Cloud, built by Lebogang Sethibe.
+    All aircraft, defects and people are synthetic.</p>
+  </footer>
+</section>
 
 <script src="config.js"></script>
 <script src="app.js"></script>

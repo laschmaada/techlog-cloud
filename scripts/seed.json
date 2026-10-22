@@ -1,157 +1,18 @@
 [
   {
     "defect": {
-      "defectId": "3fc7a7b0-4f4e-4fbb-b5d4-7862a572a0c8",
-      "tail": "ZS-SXA",
-      "fleetType": "B737-800",
-      "ataChapter": "32",
-      "station": "FAOR",
-      "description": "Nose gear steering judder during taxi-in, felt through tiller below 10 kt, no steering fault on EICAS",
-      "category": "AOG",
-      "status": "OPEN",
-      "melRef": null,
-      "raisedBy": "seed@demo.local",
-      "createdAt": "2026-10-22T10:20:41.202Z",
-      "updatedAt": "2026-10-22T10:20:41.202Z"
-    },
-    "history": [
-      {
-        "event": "CREATED",
-        "fromStatus": null,
-        "toStatus": "OPEN",
-        "actor": "seed@demo.local",
-        "at": "2026-10-22T10:20:41.202Z",
-        "detail": "Nose gear steering judder during taxi-in, felt through tiller below 10 kt, no steering fault on EICAS"
-      }
-    ]
-  },
-  {
-    "defect": {
-      "defectId": "47ee6b1a-c86b-421a-8335-033921fb3643",
-      "tail": "ZS-SXA",
-      "fleetType": "B737-800",
-      "ataChapter": "27",
-      "station": "FACT",
-      "description": "Left Krueger flap skin minor dent at station 45, within SRM limits, monitor at next A-check",
-      "category": "DEFERRAL",
-      "status": "DEFERRED",
-      "melRef": "SRM 57-10 / CAT C 10 days",
-      "raisedBy": "seed@demo.local",
-      "createdAt": "2026-10-22T10:20:41.202Z",
-      "updatedAt": "2026-10-22T10:20:41.202Z"
-    },
-    "history": [
-      {
-        "event": "CREATED",
-        "fromStatus": null,
-        "toStatus": "OPEN",
-        "actor": "seed@demo.local",
-        "at": "2026-10-22T10:20:41.202Z",
-        "detail": "Left Krueger flap skin minor dent at station 45, within SRM limits, monitor at next A-check"
-      },
-      {
-        "event": "DEFERRED",
-        "fromStatus": "OPEN",
-        "toStatus": "DEFERRED",
-        "actor": "certifying@demo.local",
-        "at": "2026-10-22T10:20:41.202Z",
-        "detail": "SRM 57-10 / CAT C 10 days"
-      }
-    ]
-  },
-  {
-    "defect": {
-      "defectId": "ff1ac171-d64e-4c48-a426-609dc4c52b60",
-      "tail": "ZS-SXB",
-      "fleetType": "B737-800",
-      "ataChapter": "71",
-      "station": "FAOR",
-      "description": "No 1 engine fan blade FOD nick, blend within AMM limits, borescope satisfactory",
-      "category": "OBSERVATION",
-      "status": "CLOSED",
-      "melRef": null,
-      "raisedBy": "seed@demo.local",
-      "createdAt": "2026-10-22T10:20:41.202Z",
-      "updatedAt": "2026-10-22T10:20:41.202Z",
-      "rectificationNote": "Blended per AMM 72-00, borescope NFF, fan track within limits",
-      "rectifiedBy": "certifying@demo.local",
-      "closedBy": "certifying@demo.local"
-    },
-    "history": [
-      {
-        "event": "CREATED",
-        "fromStatus": null,
-        "toStatus": "OPEN",
-        "actor": "seed@demo.local",
-        "at": "2026-10-22T10:20:41.202Z",
-        "detail": "No 1 engine fan blade FOD nick, blend within AMM limits, borescope satisfactory"
-      },
-      {
-        "event": "RECTIFIED",
-        "fromStatus": "OPEN",
-        "toStatus": "RECTIFIED",
-        "actor": "certifying@demo.local",
-        "at": "2026-10-22T10:20:41.202Z",
-        "detail": "Blended per AMM 72-00, borescope NFF, fan track within limits"
-      },
-      {
-        "event": "CLOSED",
-        "fromStatus": "RECTIFIED",
-        "toStatus": "CLOSED",
-        "actor": "certifying@demo.local",
-        "at": "2026-10-22T10:20:41.202Z",
-        "detail": null
-      }
-    ]
-  },
-  {
-    "defect": {
-      "defectId": "462faaba-66cf-4505-ada7-c58c1aa3aa24",
-      "tail": "ZS-SXC",
-      "fleetType": "B737-800",
-      "ataChapter": "25",
-      "station": "FALE",
-      "description": "Seat 14B tray table latch broken, seat serviceable, placard fitted",
-      "category": "CABIN",
-      "status": "DEFERRED",
-      "melRef": "MEL 25-11 CAT C",
-      "raisedBy": "seed@demo.local",
-      "createdAt": "2026-10-22T10:20:41.202Z",
-      "updatedAt": "2026-10-22T10:20:41.202Z"
-    },
-    "history": [
-      {
-        "event": "CREATED",
-        "fromStatus": null,
-        "toStatus": "OPEN",
-        "actor": "seed@demo.local",
-        "at": "2026-10-22T10:20:41.202Z",
-        "detail": "Seat 14B tray table latch broken, seat serviceable, placard fitted"
-      },
-      {
-        "event": "DEFERRED",
-        "fromStatus": "OPEN",
-        "toStatus": "DEFERRED",
-        "actor": "certifying@demo.local",
-        "at": "2026-10-22T10:20:41.202Z",
-        "detail": "MEL 25-11 CAT C"
-      }
-    ]
-  },
-  {
-    "defect": {
-      "defectId": "8b5f1de0-169c-483c-a557-f7c2bce44674",
-      "tail": "ZS-ZWA",
+      "defectId": "a2131180-6a15-4980-9f65-93d58b2df912",
+      "tail": "ZS-LEA",
       "fleetType": "A320",
       "ataChapter": "29",
       "station": "FAOR",
-      "description": "Yellow hydraulic system low pressure on engine start, ELEC pump O/P low, aircraft grounded for pump change",
+      "description": "HYD Y SYS LO PR on engine start, yellow ELEC pump output low, aircraft grounded for pump change",
       "category": "AOG",
       "status": "OPEN",
       "melRef": null,
       "raisedBy": "seed@demo.local",
-      "createdAt": "2026-10-22T10:20:41.202Z",
-      "updatedAt": "2026-10-22T10:20:41.202Z"
+      "createdAt": "2026-10-22T12:57:59.552Z",
+      "updatedAt": "2026-10-22T12:57:59.552Z"
     },
     "history": [
       {
@@ -159,25 +20,25 @@
         "fromStatus": null,
         "toStatus": "OPEN",
         "actor": "seed@demo.local",
-        "at": "2026-10-22T10:20:41.202Z",
-        "detail": "Yellow hydraulic system low pressure on engine start, ELEC pump O/P low, aircraft grounded for pump change"
+        "at": "2026-10-22T12:57:59.552Z",
+        "detail": "HYD Y SYS LO PR on engine start, yellow ELEC pump output low, aircraft grounded for pump change"
       }
     ]
   },
   {
     "defect": {
-      "defectId": "c585eead-cd4c-4df4-b410-5404d4c903e2",
-      "tail": "ZS-ZWA",
+      "defectId": "6538bd88-36c9-46ea-9448-43d3bde8bfb5",
+      "tail": "ZS-LEA",
       "fleetType": "A320",
-      "ataChapter": "34",
-      "station": "FADN",
-      "description": "Weather radar intermittent sweep drop-out in WX+T mode, no ECAM, deferred for LRU swap at base",
+      "ataChapter": "26",
+      "station": "FAOR",
+      "description": "ENG 2 FIRE DET LOOP B FAULT on ECAM during pre-flight, loop A normal",
       "category": "DEFERRAL",
       "status": "DEFERRED",
-      "melRef": "MEL 34-18 CAT B",
+      "melRef": "MEL 26-10 CAT B",
       "raisedBy": "seed@demo.local",
-      "createdAt": "2026-10-22T10:20:41.202Z",
-      "updatedAt": "2026-10-22T10:20:41.202Z"
+      "createdAt": "2026-10-22T12:57:59.552Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z"
     },
     "history": [
       {
@@ -185,33 +46,195 @@
         "fromStatus": null,
         "toStatus": "OPEN",
         "actor": "seed@demo.local",
-        "at": "2026-10-22T10:20:41.202Z",
-        "detail": "Weather radar intermittent sweep drop-out in WX+T mode, no ECAM, deferred for LRU swap at base"
+        "at": "2026-10-22T12:57:59.552Z",
+        "detail": "ENG 2 FIRE DET LOOP B FAULT on ECAM during pre-flight, loop A normal"
       },
       {
         "event": "DEFERRED",
         "fromStatus": "OPEN",
         "toStatus": "DEFERRED",
         "actor": "certifying@demo.local",
-        "at": "2026-10-22T10:20:41.202Z",
-        "detail": "MEL 34-18 CAT B"
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "MEL 26-10 CAT B"
       }
     ]
   },
   {
     "defect": {
-      "defectId": "0ddb1386-0993-4973-bde1-cf36b5496ce2",
-      "tail": "ZS-ZWB",
+      "defectId": "d6e185af-b0d8-4a5a-8ceb-6fd783aeb995",
+      "tail": "ZS-LEB",
+      "fleetType": "A320",
+      "ataChapter": "32",
+      "station": "FACT",
+      "description": "L/G NOT DOWNLOCKED red indication RH main gear on approach, recycled to three greens, inspection required before further flight",
+      "category": "AOG",
+      "status": "OPEN",
+      "melRef": null,
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "L/G NOT DOWNLOCKED red indication RH main gear on approach, recycled to three greens, inspection required before further flight"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "2884fd15-0b6a-451b-9c19-1806defeac69",
+      "tail": "ZS-LEB",
       "fleetType": "A320",
       "ataChapter": "21",
+      "station": "FALE",
+      "description": "Aft cabin zone uncontrollably hot, cockpit and fwd cabin normal, trim air valve suspect",
+      "category": "CABIN",
+      "status": "DEFERRED",
+      "melRef": "MEL 21-63 CAT C",
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "Aft cabin zone uncontrollably hot, cockpit and fwd cabin normal, trim air valve suspect"
+      },
+      {
+        "event": "DEFERRED",
+        "fromStatus": "OPEN",
+        "toStatus": "DEFERRED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "MEL 21-63 CAT C"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "6579fa0a-6929-4351-8731-8ae1ca2ce29d",
+      "tail": "ZS-LEC",
+      "fleetType": "A320",
+      "ataChapter": "24",
+      "station": "FAOR",
+      "description": "IDG 1 oil outlet temperature advisory on every flight this week, peak values creeping up sector by sector",
+      "category": "DEFERRAL",
+      "status": "DEFERRED",
+      "melRef": "MEL 24-11 CAT B - IDG change planned at base",
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "IDG 1 oil outlet temperature advisory on every flight this week, peak values creeping up sector by sector"
+      },
+      {
+        "event": "DEFERRED",
+        "fromStatus": "OPEN",
+        "toStatus": "DEFERRED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "MEL 24-11 CAT B - IDG change planned at base"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "09d5bd37-2395-4b8b-9238-3e7ac45e2a61",
+      "tail": "ZS-LEC",
+      "fleetType": "A320",
+      "ataChapter": "36",
+      "station": "FAPE",
+      "description": "ENG 2 bleed trips off on overtemp during ground ops on hot days, remains on in flight, second month of this pattern",
+      "category": "DEFERRAL",
+      "status": "DEFERRED",
+      "melRef": "MEL 36-11 CAT B",
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "ENG 2 bleed trips off on overtemp during ground ops on hot days, remains on in flight, second month of this pattern"
+      },
+      {
+        "event": "DEFERRED",
+        "fromStatus": "OPEN",
+        "toStatus": "DEFERRED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "MEL 36-11 CAT B"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "7eaa2a9d-dc34-4d19-8a36-71db6cf53c08",
+      "tail": "ZS-LED",
+      "fleetType": "A320",
+      "ataChapter": "27",
+      "station": "FAOR",
+      "description": "F/CTL ELAC 1 FAULT in cruise, control normal on ELAC 2",
+      "category": "DEFERRAL",
+      "status": "DEFERRED",
+      "melRef": "MEL 27-93 CAT B",
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "F/CTL ELAC 1 FAULT in cruise, control normal on ELAC 2"
+      },
+      {
+        "event": "DEFERRED",
+        "fromStatus": "OPEN",
+        "toStatus": "DEFERRED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "MEL 27-93 CAT B"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "c32e7457-f722-4d6a-b8ea-3a75d3990115",
+      "tail": "ZS-LED",
+      "fleetType": "A320",
+      "ataChapter": "28",
       "station": "FACT",
-      "description": "Pack 1 outlet temp fluctuation plus/minus 4 deg in cruise, no fault messages, monitor trend",
+      "description": "Total FQI disagrees with uplift plus previous total by approx 600 kg after refuel, wing quantities balanced, small discrepancies all week",
       "category": "OBSERVATION",
       "status": "OPEN",
       "melRef": null,
       "raisedBy": "seed@demo.local",
-      "createdAt": "2026-10-22T10:20:41.202Z",
-      "updatedAt": "2026-10-22T10:20:41.202Z"
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z"
     },
     "history": [
       {
@@ -219,25 +242,25 @@
         "fromStatus": null,
         "toStatus": "OPEN",
         "actor": "seed@demo.local",
-        "at": "2026-10-22T10:20:41.202Z",
-        "detail": "Pack 1 outlet temp fluctuation plus/minus 4 deg in cruise, no fault messages, monitor trend"
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "Total FQI disagrees with uplift plus previous total by approx 600 kg after refuel, wing quantities balanced, small discrepancies all week"
       }
     ]
   },
   {
     "defect": {
-      "defectId": "14e357b8-259a-4b0c-b5a2-28247841370f",
-      "tail": "ZS-ZWB",
+      "defectId": "225e13eb-883d-49f5-ad7b-7fa76e6aa2dc",
+      "tail": "ZS-LEE",
       "fleetType": "A320",
-      "ataChapter": "52",
+      "ataChapter": "49",
       "station": "FAOR",
-      "description": "FWD cargo door seal minor tear at lower aft corner, pressurisation normal, seal on order",
+      "description": "APU protective shutdown NO FLAME on two start attempts, fuel pressure normal per ECAM APU page",
       "category": "DEFERRAL",
       "status": "DEFERRED",
-      "melRef": "MEL 52-30 CAT C",
+      "melRef": "MEL 49-10 CAT C - APU inop",
       "raisedBy": "seed@demo.local",
-      "createdAt": "2026-10-22T10:20:41.202Z",
-      "updatedAt": "2026-10-22T10:20:41.203Z"
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z"
     },
     "history": [
       {
@@ -245,34 +268,224 @@
         "fromStatus": null,
         "toStatus": "OPEN",
         "actor": "seed@demo.local",
-        "at": "2026-10-22T10:20:41.202Z",
-        "detail": "FWD cargo door seal minor tear at lower aft corner, pressurisation normal, seal on order"
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "APU protective shutdown NO FLAME on two start attempts, fuel pressure normal per ECAM APU page"
       },
       {
         "event": "DEFERRED",
         "fromStatus": "OPEN",
         "toStatus": "DEFERRED",
         "actor": "certifying@demo.local",
-        "at": "2026-10-22T10:20:41.203Z",
-        "detail": "MEL 52-30 CAT C"
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "MEL 49-10 CAT C - APU inop"
       }
     ]
   },
   {
     "defect": {
-      "defectId": "8f933517-770b-40a6-9a5b-dc7beda4aa75",
-      "tail": "ZS-ZWC",
+      "defectId": "942b358f-21a0-4597-8251-e566dd813345",
+      "tail": "ZS-LEF",
       "fleetType": "A320",
-      "ataChapter": "24",
-      "station": "FAOR",
-      "description": "APU generator load fluctuation noted on turnaround, APU GCU BITE no fault, continue monitoring",
+      "ataChapter": "21",
+      "station": "FALE",
+      "description": "Repeated passenger ear-discomfort complaints on descent with this airframe, pressurisation indications normal each time",
       "category": "OBSERVATION",
-      "status": "CLOSED",
+      "status": "OPEN",
       "melRef": null,
       "raisedBy": "seed@demo.local",
-      "createdAt": "2026-10-22T10:20:41.203Z",
-      "updatedAt": "2026-10-22T10:20:41.203Z",
-      "rectificationNote": "APU GCU BITE re-run satisfactory, load stable over 3 sectors, NFF",
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "Repeated passenger ear-discomfort complaints on descent with this airframe, pressurisation indications normal each time"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "cbc32a49-0034-47ed-9afb-fe72d8d62969",
+      "tail": "ZS-LEG",
+      "fleetType": "A320",
+      "ataChapter": "22",
+      "station": "FAOR",
+      "description": "A/THR disconnects uncommanded 3 times in cruise, re-engages normally each time, thrust lever 1 instinctive switch suspect",
+      "category": "DEFERRAL",
+      "status": "DEFERRED",
+      "melRef": "MEL 22-30 CAT B",
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "A/THR disconnects uncommanded 3 times in cruise, re-engages normally each time, thrust lever 1 instinctive switch suspect"
+      },
+      {
+        "event": "DEFERRED",
+        "fromStatus": "OPEN",
+        "toStatus": "DEFERRED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "MEL 22-30 CAT B"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "fc4f3a3d-588b-4f10-8c3b-a539c8456271",
+      "tail": "ZS-LEH",
+      "fleetType": "A320",
+      "ataChapter": "29",
+      "station": "FACT",
+      "description": "HYD G RSVR LO LVL third time in 10 days, quantity drops approx 2 litres per day, no external leak found after two inspections",
+      "category": "DEFERRAL",
+      "status": "DEFERRED",
+      "melRef": "MEL 29-10 CAT B - leak measurement test at base",
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "HYD G RSVR LO LVL third time in 10 days, quantity drops approx 2 litres per day, no external leak found after two inspections"
+      },
+      {
+        "event": "DEFERRED",
+        "fromStatus": "OPEN",
+        "toStatus": "DEFERRED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "MEL 29-10 CAT B - leak measurement test at base"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "a32af9cb-0e3b-4494-88bb-f07576dfa99a",
+      "tail": "ZS-LEI",
+      "fleetType": "A320",
+      "ataChapter": "32",
+      "station": "FAOR",
+      "description": "Brake wear indicator pin flush on No 4 brake at transit check, remaining brakes healthy",
+      "category": "OBSERVATION",
+      "status": "OPEN",
+      "melRef": null,
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "Brake wear indicator pin flush on No 4 brake at transit check, remaining brakes healthy"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "a16835d2-17fd-4746-9cc6-130b7ce5cbb7",
+      "tail": "ZS-LEJ",
+      "fleetType": "A320",
+      "ataChapter": "26",
+      "station": "FAGG",
+      "description": "LAV SMOKE DET FAULT fwd lavatory, recurring after detector change, CIDS-SDF channel suspect",
+      "category": "DEFERRAL",
+      "status": "DEFERRED",
+      "melRef": "MEL 26-15 CAT C",
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "LAV SMOKE DET FAULT fwd lavatory, recurring after detector change, CIDS-SDF channel suspect"
+      },
+      {
+        "event": "DEFERRED",
+        "fromStatus": "OPEN",
+        "toStatus": "DEFERRED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "MEL 26-15 CAT C"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "0a7b6a0f-9976-488d-8918-2ed386ead48f",
+      "tail": "ZS-LEK",
+      "fleetType": "A320",
+      "ataChapter": "28",
+      "station": "FAOR",
+      "description": "Outer cell fuel trapped, inner cell emptied and engines fed normally, outer quantity never decreases, intercell transfer valve failed closed",
+      "category": "DEFERRAL",
+      "status": "RECTIFIED",
+      "melRef": null,
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z",
+      "rectificationNote": "Intercell transfer valve motor replaced, transfer test satisfactory both directions",
+      "rectifiedBy": "certifying@demo.local"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "Outer cell fuel trapped, inner cell emptied and engines fed normally, outer quantity never decreases, intercell transfer valve failed closed"
+      },
+      {
+        "event": "RECTIFIED",
+        "fromStatus": "OPEN",
+        "toStatus": "RECTIFIED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "Intercell transfer valve motor replaced, transfer test satisfactory both directions"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "0565093a-5bb9-42c5-b144-e5e089717c7d",
+      "tail": "ZS-LEL",
+      "fleetType": "A320",
+      "ataChapter": "27",
+      "station": "FALE",
+      "description": "Slats slow to extend on one side during approach configuration, completed normally, no fault message",
+      "category": "DEFERRAL",
+      "status": "CLOSED",
+      "melRef": "MEL 27-80 CAT C - monitor",
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z",
+      "rectificationNote": "Slat drive torque check satisfactory, lubrication per AMM, ops test normal",
       "rectifiedBy": "certifying@demo.local",
       "closedBy": "certifying@demo.local"
     },
@@ -282,41 +495,52 @@
         "fromStatus": null,
         "toStatus": "OPEN",
         "actor": "seed@demo.local",
-        "at": "2026-10-22T10:20:41.203Z",
-        "detail": "APU generator load fluctuation noted on turnaround, APU GCU BITE no fault, continue monitoring"
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "Slats slow to extend on one side during approach configuration, completed normally, no fault message"
+      },
+      {
+        "event": "DEFERRED",
+        "fromStatus": "OPEN",
+        "toStatus": "DEFERRED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "MEL 27-80 CAT C - monitor"
       },
       {
         "event": "RECTIFIED",
-        "fromStatus": "OPEN",
+        "fromStatus": "DEFERRED",
         "toStatus": "RECTIFIED",
         "actor": "certifying@demo.local",
-        "at": "2026-10-22T10:20:41.203Z",
-        "detail": "APU GCU BITE re-run satisfactory, load stable over 3 sectors, NFF"
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "Slat drive torque check satisfactory, lubrication per AMM, ops test normal"
       },
       {
         "event": "CLOSED",
         "fromStatus": "RECTIFIED",
         "toStatus": "CLOSED",
         "actor": "certifying@demo.local",
-        "at": "2026-10-22T10:20:41.203Z",
+        "at": "2026-10-22T12:57:59.553Z",
         "detail": null
       }
     ]
   },
   {
     "defect": {
-      "defectId": "be3b8f66-c606-4b18-b1ef-ddef492f3367",
-      "tail": "ZS-SXB",
-      "fleetType": "B737-800",
-      "ataChapter": "38",
-      "station": "FACT",
-      "description": "FWD lavatory vacuum blower noisy in operation, flush normal, blower change planned at night stop",
-      "category": "CABIN",
-      "status": "OPEN",
+      "defectId": "c3d696a3-3cfa-47d3-be36-33d7380d162c",
+      "tail": "ZS-LEM",
+      "fleetType": "A320",
+      "ataChapter": "24",
+      "station": "FABL",
+      "description": "Class 2 message IDG COOLER on post-flight report, all temperatures normal, third occurrence this month",
+      "category": "OBSERVATION",
+      "status": "CLOSED",
       "melRef": null,
       "raisedBy": "seed@demo.local",
-      "createdAt": "2026-10-22T10:20:41.203Z",
-      "updatedAt": "2026-10-22T10:20:41.203Z"
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z",
+      "rectificationNote": "Fuel/oil cooler and recirculation valve function checks satisfactory, temps normal over 3 sectors",
+      "rectifiedBy": "certifying@demo.local",
+      "closedBy": "certifying@demo.local"
     },
     "history": [
       {
@@ -324,8 +548,128 @@
         "fromStatus": null,
         "toStatus": "OPEN",
         "actor": "seed@demo.local",
-        "at": "2026-10-22T10:20:41.203Z",
-        "detail": "FWD lavatory vacuum blower noisy in operation, flush normal, blower change planned at night stop"
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "Class 2 message IDG COOLER on post-flight report, all temperatures normal, third occurrence this month"
+      },
+      {
+        "event": "RECTIFIED",
+        "fromStatus": "OPEN",
+        "toStatus": "RECTIFIED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "Fuel/oil cooler and recirculation valve function checks satisfactory, temps normal over 3 sectors"
+      },
+      {
+        "event": "CLOSED",
+        "fromStatus": "RECTIFIED",
+        "toStatus": "CLOSED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": null
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "eceb9e5e-918e-4ded-a4ab-483a8f641c6d",
+      "tail": "ZS-LEN",
+      "fleetType": "A320",
+      "ataChapter": "36",
+      "station": "FAOR",
+      "description": "Bleed pressure low at idle and during taxi, packs weak on ground, pressure normal at cruise power, HP valve suspect",
+      "category": "DEFERRAL",
+      "status": "RECTIFIED",
+      "melRef": "MEL 36-12 CAT B",
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z",
+      "rectificationNote": "HP valve replaced, bleed pressure normal at idle and take-off power",
+      "rectifiedBy": "certifying@demo.local"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "Bleed pressure low at idle and during taxi, packs weak on ground, pressure normal at cruise power, HP valve suspect"
+      },
+      {
+        "event": "DEFERRED",
+        "fromStatus": "OPEN",
+        "toStatus": "DEFERRED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "MEL 36-12 CAT B"
+      },
+      {
+        "event": "RECTIFIED",
+        "fromStatus": "DEFERRED",
+        "toStatus": "RECTIFIED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "HP valve replaced, bleed pressure normal at idle and take-off power"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "16420916-9be3-4b1d-99ed-3b26c14178d9",
+      "tail": "ZS-LEO",
+      "fleetType": "A320",
+      "ataChapter": "49",
+      "station": "FAUP",
+      "description": "APU will not start, FLAP NOT OPEN code, intake flap found closed with actuator unpowered",
+      "category": "DEFERRAL",
+      "status": "DEFERRED",
+      "melRef": "MEL 49-21 CAT C - APU inop",
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "APU will not start, FLAP NOT OPEN code, intake flap found closed with actuator unpowered"
+      },
+      {
+        "event": "DEFERRED",
+        "fromStatus": "OPEN",
+        "toStatus": "DEFERRED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "MEL 49-21 CAT C - APU inop"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "d184bc4b-ec5c-47cc-8a05-c1cd4d9b6abd",
+      "tail": "ZS-LEP",
+      "fleetType": "A320",
+      "ataChapter": "22",
+      "station": "FAOR",
+      "description": "MCDU 2 screen frozen on PERF page during turnaround, MCDU 1 normal",
+      "category": "OBSERVATION",
+      "status": "OPEN",
+      "melRef": null,
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T12:57:59.553Z",
+      "updatedAt": "2026-10-22T12:57:59.553Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T12:57:59.553Z",
+        "detail": "MCDU 2 screen frozen on PERF page during turnaround, MCDU 1 normal"
       }
     ]
   }

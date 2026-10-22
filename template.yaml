@@ -94,12 +94,41 @@ Resources:
       Endpoint: !Ref AlertEmail
 
   # ---------- Auth ----------
+  # Self-service registration is ON: anyone can create an account with an
+  # email + password, confirm the emailed code, and is then auto-added to
+  # the Mechanic group by the PostConfirmation trigger below (can raise
+  # defects immediately). Certifying is granted by an admin only.
+  PostConfirmationFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: post_confirmation.handler
+      Runtime: python3.12
+      Architectures: [arm64]
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action: cognito-idp:AdminAddUserToGroup
+              Resource: !Sub arn:aws:cognito-idp:${AWS::Region}:${AWS::AccountId}:userpool/*
+
+  PostConfirmationInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref PostConfirmationFunction
+      Principal: cognito-idp.amazonaws.com
+      SourceArn: !GetAtt UserPool.Arn
+
   UserPool:
     Type: AWS::Cognito::UserPool
     Properties:
       UserPoolName: techlog-users
       AutoVerifiedAttributes: [email]
       UsernameAttributes: [email]
+      AdminCreateUserConfig:
+        AllowAdminCreateUserOnly: false
+      LambdaConfig:
+        PostConfirmation: !GetAtt PostConfirmationFunction.Arn
       Policies:
         PasswordPolicy:
           MinimumLength: 10

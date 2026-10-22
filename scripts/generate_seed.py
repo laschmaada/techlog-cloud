@@ -7,8 +7,11 @@ Usage:
                                                 # into the DynamoDB table
                                                 # (TABLE_NAME env var, AWS creds required)
 
-All data is synthetic: invented tails, stations and defect texts written
-from generic maintenance experience. No real airline data.
+v2 seed: Highveld Air — a fictional South African domestic airline.
+Fleet: 20 x Airbus A320, ZS-LEA to ZS-LET, base FAOR (OR Tambo).
+Defect texts are drawn from the A320 snag library built out of the
+Airbus Technical Training Manual (derived and paraphrased; see the
+aviation-cloud-portfolio snag-library). All data is synthetic.
 """
 
 from __future__ import annotations
@@ -21,39 +24,73 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 import logic  # noqa: E402
 
 SAMPLES = [
-    # tail, fleet, ata, station, category, description, then: actions [(action, fields)]
-    ("ZS-SXA", "B737-800", "32", "FAOR", "AOG",
-     "Nose gear steering judder during taxi-in, felt through tiller below 10 kt, no steering fault on EICAS",
+    # tail, fleet, ata, station, category, description, actions [(action, fields)]
+    ("ZS-LEA", "A320", "29", "FAOR", "AOG",
+     "HYD Y SYS LO PR on engine start, yellow ELEC pump output low, aircraft grounded for pump change",
      []),
-    ("ZS-SXA", "B737-800", "27", "FACT", "DEFERRAL",
-     "Left Krueger flap skin minor dent at station 45, within SRM limits, monitor at next A-check",
-     [("defer", {"melRef": "SRM 57-10 / CAT C 10 days"})]),
-    ("ZS-SXB", "B737-800", "71", "FAOR", "OBSERVATION",
-     "No 1 engine fan blade FOD nick, blend within AMM limits, borescope satisfactory",
-     [("rectify", {"rectificationNote": "Blended per AMM 72-00, borescope NFF, fan track within limits"}),
+    ("ZS-LEA", "A320", "26", "FAOR", "DEFERRAL",
+     "ENG 2 FIRE DET LOOP B FAULT on ECAM during pre-flight, loop A normal",
+     [("defer", {"melRef": "MEL 26-10 CAT B"})]),
+    ("ZS-LEB", "A320", "32", "FACT", "AOG",
+     "L/G NOT DOWNLOCKED red indication RH main gear on approach, recycled to three greens, inspection required before further flight",
+     []),
+    ("ZS-LEB", "A320", "21", "FALE", "CABIN",
+     "Aft cabin zone uncontrollably hot, cockpit and fwd cabin normal, trim air valve suspect",
+     [("defer", {"melRef": "MEL 21-63 CAT C"})]),
+    ("ZS-LEC", "A320", "24", "FAOR", "DEFERRAL",
+     "IDG 1 oil outlet temperature advisory on every flight this week, peak values creeping up sector by sector",
+     [("defer", {"melRef": "MEL 24-11 CAT B - IDG change planned at base"})]),
+    ("ZS-LEC", "A320", "36", "FAPE", "DEFERRAL",
+     "ENG 2 bleed trips off on overtemp during ground ops on hot days, remains on in flight, second month of this pattern",
+     [("defer", {"melRef": "MEL 36-11 CAT B"})]),
+    ("ZS-LED", "A320", "27", "FAOR", "DEFERRAL",
+     "F/CTL ELAC 1 FAULT in cruise, control normal on ELAC 2",
+     [("defer", {"melRef": "MEL 27-93 CAT B"})]),
+    ("ZS-LED", "A320", "28", "FACT", "OBSERVATION",
+     "Total FQI disagrees with uplift plus previous total by approx 600 kg after refuel, wing quantities balanced, small discrepancies all week",
+     []),
+    ("ZS-LEE", "A320", "49", "FAOR", "DEFERRAL",
+     "APU protective shutdown NO FLAME on two start attempts, fuel pressure normal per ECAM APU page",
+     [("defer", {"melRef": "MEL 49-10 CAT C - APU inop"})]),
+    ("ZS-LEF", "A320", "21", "FALE", "OBSERVATION",
+     "Repeated passenger ear-discomfort complaints on descent with this airframe, pressurisation indications normal each time",
+     []),
+    ("ZS-LEG", "A320", "22", "FAOR", "DEFERRAL",
+     "A/THR disconnects uncommanded 3 times in cruise, re-engages normally each time, thrust lever 1 instinctive switch suspect",
+     [("defer", {"melRef": "MEL 22-30 CAT B"})]),
+    ("ZS-LEH", "A320", "29", "FACT", "DEFERRAL",
+     "HYD G RSVR LO LVL third time in 10 days, quantity drops approx 2 litres per day, no external leak found after two inspections",
+     [("defer", {"melRef": "MEL 29-10 CAT B - leak measurement test at base"})]),
+    ("ZS-LEI", "A320", "32", "FAOR", "OBSERVATION",
+     "Brake wear indicator pin flush on No 4 brake at transit check, remaining brakes healthy",
+     []),
+    ("ZS-LEJ", "A320", "26", "FAGG", "DEFERRAL",
+     "LAV SMOKE DET FAULT fwd lavatory, recurring after detector change, CIDS-SDF channel suspect",
+     [("defer", {"melRef": "MEL 26-15 CAT C"})]),
+    ("ZS-LEK", "A320", "28", "FAOR", "DEFERRAL",
+     "Outer cell fuel trapped, inner cell emptied and engines fed normally, outer quantity never decreases, intercell transfer valve failed closed",
+     [("rectify", {"rectificationNote": "Intercell transfer valve motor replaced, transfer test satisfactory both directions"})]),
+    ("ZS-LEL", "A320", "27", "FALE", "DEFERRAL",
+     "Slats slow to extend on one side during approach configuration, completed normally, no fault message",
+     [("defer", {"melRef": "MEL 27-80 CAT C - monitor"}),
+      ("rectify", {"rectificationNote": "Slat drive torque check satisfactory, lubrication per AMM, ops test normal"}),
       ("close", {})]),
-    ("ZS-SXC", "B737-800", "25", "FALE", "CABIN",
-     "Seat 14B tray table latch broken, seat serviceable, placard fitted",
-     [("defer", {"melRef": "MEL 25-11 CAT C"})]),
-    ("ZS-ZWA", "A320", "29", "FAOR", "AOG",
-     "Yellow hydraulic system low pressure on engine start, ELEC pump O/P low, aircraft grounded for pump change",
-     []),
-    ("ZS-ZWA", "A320", "34", "FADN", "DEFERRAL",
-     "Weather radar intermittent sweep drop-out in WX+T mode, no ECAM, deferred for LRU swap at base",
-     [("defer", {"melRef": "MEL 34-18 CAT B"})]),
-    ("ZS-ZWB", "A320", "21", "FACT", "OBSERVATION",
-     "Pack 1 outlet temp fluctuation plus/minus 4 deg in cruise, no fault messages, monitor trend",
-     []),
-    ("ZS-ZWB", "A320", "52", "FAOR", "DEFERRAL",
-     "FWD cargo door seal minor tear at lower aft corner, pressurisation normal, seal on order",
-     [("defer", {"melRef": "MEL 52-30 CAT C"})]),
-    ("ZS-ZWC", "A320", "24", "FAOR", "OBSERVATION",
-     "APU generator load fluctuation noted on turnaround, APU GCU BITE no fault, continue monitoring",
-     [("rectify", {"rectificationNote": "APU GCU BITE re-run satisfactory, load stable over 3 sectors, NFF"}),
+    ("ZS-LEM", "A320", "24", "FABL", "OBSERVATION",
+     "Class 2 message IDG COOLER on post-flight report, all temperatures normal, third occurrence this month",
+     [("rectify", {"rectificationNote": "Fuel/oil cooler and recirculation valve function checks satisfactory, temps normal over 3 sectors"}),
       ("close", {})]),
-    ("ZS-SXB", "B737-800", "38", "FACT", "CABIN",
-     "FWD lavatory vacuum blower noisy in operation, flush normal, blower change planned at night stop",
+    ("ZS-LEN", "A320", "36", "FAOR", "DEFERRAL",
+     "Bleed pressure low at idle and during taxi, packs weak on ground, pressure normal at cruise power, HP valve suspect",
+     [("defer", {"melRef": "MEL 36-12 CAT B"}),
+      ("rectify", {"rectificationNote": "HP valve replaced, bleed pressure normal at idle and take-off power"})]),
+    ("ZS-LEO", "A320", "49", "FAUP", "DEFERRAL",
+     "APU will not start, FLAP NOT OPEN code, intake flap found closed with actuator unpowered",
+     [("defer", {"melRef": "MEL 49-21 CAT C - APU inop"})]),
+    ("ZS-LEP", "A320", "22", "FAOR", "OBSERVATION",
+     "MCDU 2 screen frozen on PERF page during turnaround, MCDU 1 normal",
      []),
+    # ZS-LEQ, ZS-LER, ZS-LES, ZS-LET: in service, no defects. A clean tail
+    # is a data point too.
 ]
 
 

@@ -6,7 +6,13 @@ Built by **Lebogang Sethibe** — 20+ years aircraft maintenance (B737-800, A320
 
 ## Live demo
 
-**▶ https://d3qpkw8em0knl8.cloudfront.net** — deployed to **af-south-1 (Cape Town)** and verified end-to-end on 22 Oct 2026: role-based sign-in (Mechanic / Certifying), fleet board, the full `OPEN → DEFERRED → RECTIFIED → CLOSED` workflow with append-only audit history, and a live AOG email alert via SNS. Demo logins available on request.
+**▶ https://d3qpkw8em0knl8.cloudfront.net** — deployed to **af-south-1 (Cape Town)** and verified end-to-end on 22 Oct 2026: role-based sign-in (Mechanic / Certifying), fleet board, the full `OPEN → DEFERRED → RECTIFIED → CLOSED` workflow with append-only audit history, and a live AOG email alert via SNS. Demo logins available on request — or **create your own account** on the sign-in page (v2, below).
+
+## The airline (v2)
+
+The demo is skinned as **Highveld Air** — a fictional South African domestic airline, hub at **OR Tambo International, Johannesburg (FAOR)**, flying to Cape Town, Durban, Gqeberha, East London, Bloemfontein, George, Lanseria, Kimberley and Upington with **20 × Airbus A320 (ZS-LEA – ZS-LET)**. The rebrand is more than paint: the seed defects are drawn from an A320 snag library derived from the Airbus Technical Training Manual, so the log reads like a real A320 line operation — IDG temperature trends, bleed trips on hot days, repeat reservoir top-ups hiding an internal leak.
+
+**Self-service accounts (v2):** anyone can register with an email + password, confirm the emailed code, and is automatically added to the `Mechanic` group by a Cognito PostConfirmation Lambda trigger — they can raise defects immediately. `Certifying` is never self-service; an administrator promotes accounts. Password reset is self-service too.
 
 ## Why
 
@@ -20,8 +26,10 @@ Paper and deferred-defect systems fail in predictable ways: a defect raised at a
 - Defect photos via S3 pre-signed upload into a **versioned bucket with Object Lock** (retention story)
 - Append-only audit history per defect — every state change, who did it, when, and the MEL ref / rectification note
 - Role-based access: Cognito groups `Mechanic` (raise) and `Certifying` (raise + status changes), enforced at the API authorizer *and* in the Lambda
+- **Self-service registration** with email verification; a PostConfirmation trigger grants `Mechanic` on signup (Certifying stays admin-only), plus self-service password reset
+- Branded ops console: live fleet-status grid for all 20 tails (AOG / open / deferred / in service), fleet health stats, click-a-tail log filtering
 - Fleet board by status + per-tail log page view
-- 15 unit tests covering validation, the workflow state machine, and the DynamoDB item shapes
+- 18 unit tests covering validation, the workflow state machine, the DynamoDB item shapes, and the signup trigger
 
 ## Architecture
 
@@ -61,11 +69,12 @@ See **[DEPLOY.md](DEPLOY.md)** — full walkthrough for Windows + PowerShell: in
 ## Sample data
 
 ```bash
-python3 scripts/generate_seed.py         # writes scripts/seed.json (10 defects)
+python3 scripts/generate_seed.py         # writes scripts/seed.json (20 defects)
 python3 scripts/generate_seed.py --load  # also loads them into your table
+python3 scripts/reset_data.py            # deletes ALL table items (v1 → v2 reset)
 ```
 
-The 10 seed defects are written from generic maintenance experience across both fleets — an AOG nose-gear steering defect, MEL deferrals, a closed hydraulic observation, cabin defects — in mixed workflow states so the fleet board demos properly.
+The 20 seed defects are A320 line stories drawn from the TTM-derived snag library, spread over 16 of the 20 Highveld Air tails in mixed workflow states (6 open incl. 2 AOG, 10 deferred, 2 rectified, 2 closed) — the remaining 4 tails are in service with clean logs, because a clean tail is a data point too. See **[UPGRADE.md](UPGRADE.md)** for the v1 → v2 redeploy steps.
 
 ## Part 145 record-keeping considerations (design notes)
 
