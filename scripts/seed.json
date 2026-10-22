@@ -1,0 +1,332 @@
+[
+  {
+    "defect": {
+      "defectId": "3fc7a7b0-4f4e-4fbb-b5d4-7862a572a0c8",
+      "tail": "ZS-SXA",
+      "fleetType": "B737-800",
+      "ataChapter": "32",
+      "station": "FAOR",
+      "description": "Nose gear steering judder during taxi-in, felt through tiller below 10 kt, no steering fault on EICAS",
+      "category": "AOG",
+      "status": "OPEN",
+      "melRef": null,
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T10:20:41.202Z",
+      "updatedAt": "2026-10-22T10:20:41.202Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T10:20:41.202Z",
+        "detail": "Nose gear steering judder during taxi-in, felt through tiller below 10 kt, no steering fault on EICAS"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "47ee6b1a-c86b-421a-8335-033921fb3643",
+      "tail": "ZS-SXA",
+      "fleetType": "B737-800",
+      "ataChapter": "27",
+      "station": "FACT",
+      "description": "Left Krueger flap skin minor dent at station 45, within SRM limits, monitor at next A-check",
+      "category": "DEFERRAL",
+      "status": "DEFERRED",
+      "melRef": "SRM 57-10 / CAT C 10 days",
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T10:20:41.202Z",
+      "updatedAt": "2026-10-22T10:20:41.202Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T10:20:41.202Z",
+        "detail": "Left Krueger flap skin minor dent at station 45, within SRM limits, monitor at next A-check"
+      },
+      {
+        "event": "DEFERRED",
+        "fromStatus": "OPEN",
+        "toStatus": "DEFERRED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T10:20:41.202Z",
+        "detail": "SRM 57-10 / CAT C 10 days"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "ff1ac171-d64e-4c48-a426-609dc4c52b60",
+      "tail": "ZS-SXB",
+      "fleetType": "B737-800",
+      "ataChapter": "71",
+      "station": "FAOR",
+      "description": "No 1 engine fan blade FOD nick, blend within AMM limits, borescope satisfactory",
+      "category": "OBSERVATION",
+      "status": "CLOSED",
+      "melRef": null,
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T10:20:41.202Z",
+      "updatedAt": "2026-10-22T10:20:41.202Z",
+      "rectificationNote": "Blended per AMM 72-00, borescope NFF, fan track within limits",
+      "rectifiedBy": "certifying@demo.local",
+      "closedBy": "certifying@demo.local"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T10:20:41.202Z",
+        "detail": "No 1 engine fan blade FOD nick, blend within AMM limits, borescope satisfactory"
+      },
+      {
+        "event": "RECTIFIED",
+        "fromStatus": "OPEN",
+        "toStatus": "RECTIFIED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T10:20:41.202Z",
+        "detail": "Blended per AMM 72-00, borescope NFF, fan track within limits"
+      },
+      {
+        "event": "CLOSED",
+        "fromStatus": "RECTIFIED",
+        "toStatus": "CLOSED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T10:20:41.202Z",
+        "detail": null
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "462faaba-66cf-4505-ada7-c58c1aa3aa24",
+      "tail": "ZS-SXC",
+      "fleetType": "B737-800",
+      "ataChapter": "25",
+      "station": "FALE",
+      "description": "Seat 14B tray table latch broken, seat serviceable, placard fitted",
+      "category": "CABIN",
+      "status": "DEFERRED",
+      "melRef": "MEL 25-11 CAT C",
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T10:20:41.202Z",
+      "updatedAt": "2026-10-22T10:20:41.202Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T10:20:41.202Z",
+        "detail": "Seat 14B tray table latch broken, seat serviceable, placard fitted"
+      },
+      {
+        "event": "DEFERRED",
+        "fromStatus": "OPEN",
+        "toStatus": "DEFERRED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T10:20:41.202Z",
+        "detail": "MEL 25-11 CAT C"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "8b5f1de0-169c-483c-a557-f7c2bce44674",
+      "tail": "ZS-ZWA",
+      "fleetType": "A320",
+      "ataChapter": "29",
+      "station": "FAOR",
+      "description": "Yellow hydraulic system low pressure on engine start, ELEC pump O/P low, aircraft grounded for pump change",
+      "category": "AOG",
+      "status": "OPEN",
+      "melRef": null,
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T10:20:41.202Z",
+      "updatedAt": "2026-10-22T10:20:41.202Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T10:20:41.202Z",
+        "detail": "Yellow hydraulic system low pressure on engine start, ELEC pump O/P low, aircraft grounded for pump change"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "c585eead-cd4c-4df4-b410-5404d4c903e2",
+      "tail": "ZS-ZWA",
+      "fleetType": "A320",
+      "ataChapter": "34",
+      "station": "FADN",
+      "description": "Weather radar intermittent sweep drop-out in WX+T mode, no ECAM, deferred for LRU swap at base",
+      "category": "DEFERRAL",
+      "status": "DEFERRED",
+      "melRef": "MEL 34-18 CAT B",
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T10:20:41.202Z",
+      "updatedAt": "2026-10-22T10:20:41.202Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T10:20:41.202Z",
+        "detail": "Weather radar intermittent sweep drop-out in WX+T mode, no ECAM, deferred for LRU swap at base"
+      },
+      {
+        "event": "DEFERRED",
+        "fromStatus": "OPEN",
+        "toStatus": "DEFERRED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T10:20:41.202Z",
+        "detail": "MEL 34-18 CAT B"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "0ddb1386-0993-4973-bde1-cf36b5496ce2",
+      "tail": "ZS-ZWB",
+      "fleetType": "A320",
+      "ataChapter": "21",
+      "station": "FACT",
+      "description": "Pack 1 outlet temp fluctuation plus/minus 4 deg in cruise, no fault messages, monitor trend",
+      "category": "OBSERVATION",
+      "status": "OPEN",
+      "melRef": null,
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T10:20:41.202Z",
+      "updatedAt": "2026-10-22T10:20:41.202Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T10:20:41.202Z",
+        "detail": "Pack 1 outlet temp fluctuation plus/minus 4 deg in cruise, no fault messages, monitor trend"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "14e357b8-259a-4b0c-b5a2-28247841370f",
+      "tail": "ZS-ZWB",
+      "fleetType": "A320",
+      "ataChapter": "52",
+      "station": "FAOR",
+      "description": "FWD cargo door seal minor tear at lower aft corner, pressurisation normal, seal on order",
+      "category": "DEFERRAL",
+      "status": "DEFERRED",
+      "melRef": "MEL 52-30 CAT C",
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T10:20:41.202Z",
+      "updatedAt": "2026-10-22T10:20:41.203Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T10:20:41.202Z",
+        "detail": "FWD cargo door seal minor tear at lower aft corner, pressurisation normal, seal on order"
+      },
+      {
+        "event": "DEFERRED",
+        "fromStatus": "OPEN",
+        "toStatus": "DEFERRED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T10:20:41.203Z",
+        "detail": "MEL 52-30 CAT C"
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "8f933517-770b-40a6-9a5b-dc7beda4aa75",
+      "tail": "ZS-ZWC",
+      "fleetType": "A320",
+      "ataChapter": "24",
+      "station": "FAOR",
+      "description": "APU generator load fluctuation noted on turnaround, APU GCU BITE no fault, continue monitoring",
+      "category": "OBSERVATION",
+      "status": "CLOSED",
+      "melRef": null,
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T10:20:41.203Z",
+      "updatedAt": "2026-10-22T10:20:41.203Z",
+      "rectificationNote": "APU GCU BITE re-run satisfactory, load stable over 3 sectors, NFF",
+      "rectifiedBy": "certifying@demo.local",
+      "closedBy": "certifying@demo.local"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T10:20:41.203Z",
+        "detail": "APU generator load fluctuation noted on turnaround, APU GCU BITE no fault, continue monitoring"
+      },
+      {
+        "event": "RECTIFIED",
+        "fromStatus": "OPEN",
+        "toStatus": "RECTIFIED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T10:20:41.203Z",
+        "detail": "APU GCU BITE re-run satisfactory, load stable over 3 sectors, NFF"
+      },
+      {
+        "event": "CLOSED",
+        "fromStatus": "RECTIFIED",
+        "toStatus": "CLOSED",
+        "actor": "certifying@demo.local",
+        "at": "2026-10-22T10:20:41.203Z",
+        "detail": null
+      }
+    ]
+  },
+  {
+    "defect": {
+      "defectId": "be3b8f66-c606-4b18-b1ef-ddef492f3367",
+      "tail": "ZS-SXB",
+      "fleetType": "B737-800",
+      "ataChapter": "38",
+      "station": "FACT",
+      "description": "FWD lavatory vacuum blower noisy in operation, flush normal, blower change planned at night stop",
+      "category": "CABIN",
+      "status": "OPEN",
+      "melRef": null,
+      "raisedBy": "seed@demo.local",
+      "createdAt": "2026-10-22T10:20:41.203Z",
+      "updatedAt": "2026-10-22T10:20:41.203Z"
+    },
+    "history": [
+      {
+        "event": "CREATED",
+        "fromStatus": null,
+        "toStatus": "OPEN",
+        "actor": "seed@demo.local",
+        "at": "2026-10-22T10:20:41.203Z",
+        "detail": "FWD lavatory vacuum blower noisy in operation, flush normal, blower change planned at night stop"
+      }
+    ]
+  }
+]

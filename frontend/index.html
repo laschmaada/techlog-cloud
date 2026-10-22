@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TechLog Cloud — Digital Aircraft Technical Log</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>✈ TechLog Cloud</h1>
+  <p class="tag">Digital aircraft technical log · synthetic demo data only</p>
+  <div id="userbar" class="hidden">
+    <span id="who"></span>
+    <button id="logout" type="button">Log out</button>
+  </div>
+</header>
+
+<main>
+  <!-- Login -->
+  <section id="login-view" class="card">
+    <h2>Sign in</h2>
+    <form id="login-form">
+      <label>Email <input type="email" id="login-email" required></label>
+      <label>Password <input type="password" id="login-password" required></label>
+      <button type="submit">Sign in</button>
+      <p id="login-error" class="error"></p>
+    </form>
+    <p class="hint">Accounts are created by the admin in Cognito (see DEPLOY.md).
+    Demo users: a <b>Mechanic</b> can raise defects; <b>Certifying</b> can also defer / rectify / close.</p>
+  </section>
+
+  <!-- App -->
+  <section id="app-view" class="hidden">
+    <div class="card">
+      <h2>Fleet board</h2>
+      <div class="tabs" id="status-tabs">
+        <button data-status="OPEN" class="active" type="button">Open</button>
+        <button data-status="DEFERRED" type="button">Deferred</button>
+        <button data-status="RECTIFIED" type="button">Rectified</button>
+        <button data-status="CLOSED" type="button">Closed</button>
+      </div>
+      <table>
+        <thead><tr><th>Tail</th><th>ATA</th><th>Station</th><th>Category</th><th>Description</th><th>Raised</th></tr></thead>
+        <tbody id="board-body"></tbody>
+      </table>
+      <p id="board-empty" class="hint hidden">No defects in this status.</p>
+    </div>
+
+    <div class="card">
+      <h2>Raise a defect</h2>
+      <form id="raise-form">
+        <div class="grid">
+          <label>Registration
+            <select id="f-tail" required></select>
+          </label>
+          <label>Fleet type
+            <select id="f-fleet" required>
+              <option>B737-800</option><option>A320</option>
+            </select>
+          </label>
+          <label>ATA chapter <input id="f-ata" placeholder="e.g. 32" maxlength="2" required></label>
+          <label>Station (ICAO) <input id="f-station" placeholder="FAOR" maxlength="4" required></label>
+          <label>Category
+            <select id="f-category" required>
+              <option>AOG</option><option>DEFERRAL</option><option>CABIN</option><option>OBSERVATION</option>
+            </select>
+          </label>
+        </div>
+        <label>Description (write it like a log entry)
+          <textarea id="f-desc" rows="3" required placeholder="e.g. Nose gear steering judder during taxi-in, felt through tiller at low speed"></textarea>
+        </label>
+        <button type="submit">Raise defect</button>
+        <p id="raise-msg"></p>
+      </form>
+    </div>
+
+    <div class="card hidden" id="detail-card">
+      <h2>Defect detail</h2>
+      <div id="detail-body"></div>
+      <div id="detail-actions"></div>
+      <h3>Audit history (append-only)</h3>
+      <ul id="history-list" class="timeline"></ul>
+      <label class="photo">Attach photo
+        <input type="file" id="photo-file" accept="image/*">
+      </label>
+      <p id="photo-msg"></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>TechLog Cloud — portfolio project by Lebogang Sethibe. All aircraft, defects and people are synthetic.</p>
+</footer>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

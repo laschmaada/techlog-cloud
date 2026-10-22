@@ -1,0 +1,16 @@
+# SAM build output
+.aws-sam/
+samconfig.toml
+
+# Real frontend config contains your pool IDs - never commit it.
+# (config.example.js is the template.)
+frontend/config.js
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS / editor
+.DS_Store
+.vscode/
